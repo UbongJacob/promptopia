@@ -1,9 +1,9 @@
-const Provider = (): JSX.Element => {
-  return (
-    <div>
-      <h4>Provider</h4>
-    </div>
-  );
+"use client";
+
+import { SessionProvider, SessionProviderProps } from "next-auth/react";
+
+const Provider = ({ children, session }: SessionProviderProps): JSX.Element => {
+  return <SessionProvider session={session}>{children}</SessionProvider>;
 };
 
 export default Provider;
